@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Membresía de Asociación</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<main class="container">
+
+    <section id="formularioSeccion">
+        <h2>Formulario de Membresía de Asociación</h2>
+
+        <div id="errorBox" class="error-box hidden" role="alert">
+            <strong>Por favor, corrige los siguientes campos:</strong>
+            <ul id="listaErrores"></ul>
+        </div>
+
+        <form id="formularioMembresia" novalidate>
+            <h3>Información de miembro</h3>
+
+            <span class="label-text">Nombre completo</span>
+            <div class="row">
+                <div class="col">
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Primer nombre"
+                        autocomplete="given-name"
+                    >
+                </div>
+
+                <div class="col">
+                    <input
+                        type="text"
+                        id="apellido"
+                        name="apellido"
+                        placeholder="Apellido"
+                        autocomplete="family-name"
+                    >
+                </div>
+            </div>
+
+            <span class="label-text">¿Cuál es tu dirección?</span>
+
+            <div class="input-group">
+                <input
+                    type="text"
+                    id="direccion1"
+                    name="direccion1"
+                    placeholder="Dirección principal"
+                    autocomplete="address-line1"
+                >
+            </div>
+
+            <div class="input-group">
+                <input
+                    type="text"
+                    id="direccion2"
+                    name="direccion2"
+                    placeholder="Línea de dirección 2 (opcional)"
+                    autocomplete="address-line2"
+                >
+            </div>
+
+            <div class="row row-four-cols">
+                <div class="col col-city">
+                    <input
+                        type="text"
+                        id="ciudad"
+                        name="ciudad"
+                        placeholder="Ciudad"
+                        autocomplete="address-level2"
+                    >
+                </div>
+
+                <div class="col col-state">
+                    <input
+                        type="text"
+                        id="estado"
+                        name="estado"
+                        placeholder="Provincia o estado"
+                        autocomplete="address-level1"
+                    >
+                </div>
+
+                <div class="col col-zip">
+                    <input
+                        type="text"
+                        id="codigo_postal"
+                        name="codigo_postal"
+                        placeholder="Código postal"
+                        autocomplete="postal-code"
+                    >
+                </div>
+
+                <div class="col col-country">
+                    <select id="pais" name="pais" autocomplete="country-name">
+                        <option value="">Selecciona un país</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <span class="label-text">Número de teléfono</span>
+                <input
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="Número de teléfono"
+                    maxlength="10"
+                    inputmode="numeric"
+                    autocomplete="tel"
+                >
+            </div>
+
+            <div class="input-group">
+                <span class="label-text">Dirección de correo electrónico</span>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Dirección de correo electrónico"
+                    autocomplete="email"
+                >
+            </div>
+
+            <button type="submit">Enviar registro</button>
+        </form>
+    </section>
+
+    <section id="exitoSeccion" class="success-box hidden" aria-live="polite">
+        <h1>¡Registro exitoso!</h1>
+        <p>Tus datos han sido validados correctamente.</p>
+        <button type="button" id="btnVolver" class="btn-volver">
+            Volver a registrar
+        </button>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
