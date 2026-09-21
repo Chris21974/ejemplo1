@@ -3,147 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Membresía de Asociación</title>
+    <meta name="description" content="Infografía sobre el modelo de referencia OSI y su aplicación en Cisco Packet Tracer">
+    <title>Modelo OSI | Módulo 6</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+    <main class="infografia">
+        <header class="hero">
+            <p class="eyebrow">MÓDULO 6 · REDES</p>
+            <h1>Modelo de Referencia <span>OSI</span></h1>
+            <p class="subtitle">Arquitectura por capas de la red y prácticas en Cisco Packet Tracer</p>
+        </header>
 
-<main class="container">
+        <section class="intro" aria-labelledby="intro-title">
+            <div class="intro-icon" aria-hidden="true">↕</div>
+            <div>
+                <h2 id="intro-title">¿Qué es el modelo OSI?</h2>
+                <p>Es un modelo conceptual que divide la comunicación de red en <strong>siete capas</strong>. Cada capa cumple una función específica y trabaja con la que está encima y debajo.</p>
+            </div>
+        </section>
 
-    <section id="formularioSeccion">
-        <h2>Formulario de Membresía de Asociación</h2>
-
-        <div id="errorBox" class="error-box hidden" role="alert">
-            <strong>Por favor, corrige los siguientes campos:</strong>
-            <ul id="listaErrores"></ul>
-        </div>
-
-        <form id="formularioMembresia" novalidate>
-            <h3>Información de miembro</h3>
-
-            <span class="label-text">Nombre completo</span>
-            <div class="row">
-                <div class="col">
-                    <input
-                        type="text"
-                        id="nombre"
-                        name="nombre"
-                        placeholder="Primer nombre"
-                        autocomplete="given-name"
-                    >
-                </div>
-
-                <div class="col">
-                    <input
-                        type="text"
-                        id="apellido"
-                        name="apellido"
-                        placeholder="Apellido"
-                        autocomplete="family-name"
-                    >
+        <section aria-labelledby="layers-title">
+            <div class="section-heading">
+                <span class="number">01</span>
+                <div>
+                    <h2 id="layers-title">Las 7 capas de la comunicación</h2>
+                    <p>De la interacción con el usuario a la transmisión física.</p>
                 </div>
             </div>
 
-            <span class="label-text">¿Cuál es tu dirección?</span>
-
-            <div class="input-group">
-                <input
-                    type="text"
-                    id="direccion1"
-                    name="direccion1"
-                    placeholder="Dirección principal"
-                    autocomplete="address-line1"
-                >
+            <div class="layers">
+                <article class="layer layer-7">
+                    <div class="layer-number">7</div>
+                    <div><h3>Aplicación</h3><p>Servicios de red para el usuario.</p><small>HTTP · DNS · FTP · SMTP</small></div>
+                </article>
+                <article class="layer layer-6">
+                    <div class="layer-number">6</div>
+                    <div><h3>Presentación</h3><p>Formato, cifrado y compresión de datos.</p><small>JPEG · SSL/TLS · ASCII</small></div>
+                </article>
+                <article class="layer layer-5">
+                    <div class="layer-number">5</div>
+                    <div><h3>Sesión</h3><p>Inicia, administra y termina sesiones.</p><small>Control de diálogo</small></div>
+                </article>
+                <article class="layer layer-4">
+                    <div class="layer-number">4</div>
+                    <div><h3>Transporte</h3><p>Entrega confiable y control del flujo.</p><small>TCP · UDP · Puertos</small></div>
+                </article>
+                <article class="layer layer-3">
+                    <div class="layer-number">3</div>
+                    <div><h3>Red</h3><p>Direccionamiento y selección de rutas.</p><small>IP · Routers · ICMP</small></div>
+                </article>
+                <article class="layer layer-2">
+                    <div class="layer-number">2</div>
+                    <div><h3>Enlace de datos</h3><p>Tramas, acceso al medio y MAC.</p><small>Ethernet · Switches · VLAN</small></div>
+                </article>
+                <article class="layer layer-1">
+                    <div class="layer-number">1</div>
+                    <div><h3>Física</h3><p>Transmite bits por el medio físico.</p><small>Cables · Fibra · Señales</small></div>
+                </article>
             </div>
+        </section>
 
-            <div class="input-group">
-                <input
-                    type="text"
-                    id="direccion2"
-                    name="direccion2"
-                    placeholder="Línea de dirección 2 (opcional)"
-                    autocomplete="address-line2"
-                >
-            </div>
-
-            <div class="row row-four-cols">
-                <div class="col col-city">
-                    <input
-                        type="text"
-                        id="ciudad"
-                        name="ciudad"
-                        placeholder="Ciudad"
-                        autocomplete="address-level2"
-                    >
-                </div>
-
-                <div class="col col-state">
-                    <input
-                        type="text"
-                        id="estado"
-                        name="estado"
-                        placeholder="Provincia o estado"
-                        autocomplete="address-level1"
-                    >
-                </div>
-
-                <div class="col col-zip">
-                    <input
-                        type="text"
-                        id="codigo_postal"
-                        name="codigo_postal"
-                        placeholder="Código postal"
-                        autocomplete="postal-code"
-                    >
-                </div>
-
-                <div class="col col-country">
-                    <select id="pais" name="pais" autocomplete="country-name">
-                        <option value="">Selecciona un país</option>
-                        <option value="Ecuador">Ecuador</option>
-                        <option value="Otro">Otro</option>
-                    </select>
+        <section class="packet-tracer" aria-labelledby="practice-title">
+            <div class="section-heading">
+                <span class="number">02</span>
+                <div>
+                    <h2 id="practice-title">Práctica en Cisco Packet Tracer</h2>
+                    <p>Observa cómo cada capa participa en una red real.</p>
                 </div>
             </div>
-
-            <div class="input-group">
-                <span class="label-text">Número de teléfono</span>
-                <input
-                    type="tel"
-                    id="telefono"
-                    name="telefono"
-                    placeholder="Número de teléfono"
-                    maxlength="10"
-                    inputmode="numeric"
-                    autocomplete="tel"
-                >
+            <div class="steps">
+                <div class="step"><b>01</b><h3>Diseña</h3><p>Agrega PCs, switches y routers al área de trabajo.</p></div>
+                <div class="step"><b>02</b><h3>Conecta</h3><p>Usa cables adecuados y configura las interfaces.</p></div>
+                <div class="step"><b>03</b><h3>Configura</h3><p>Asigna IP, máscara y puerta de enlace.</p></div>
+                <div class="step"><b>04</b><h3>Verifica</h3><p>Utiliza <code>ping</code>, <code>show ip route</code> y el modo Simulation.</p></div>
             </div>
+        </section>
 
-            <div class="input-group">
-                <span class="label-text">Dirección de correo electrónico</span>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Dirección de correo electrónico"
-                    autocomplete="email"
-                >
-            </div>
-
-            <button type="submit">Enviar registro</button>
-        </form>
-    </section>
-
-    <section id="exitoSeccion" class="success-box hidden" aria-live="polite">
-        <h1>¡Registro exitoso!</h1>
-        <p>Tus datos han sido validados correctamente.</p>
-        <button type="button" id="btnVolver" class="btn-volver">
-            Volver a registrar
-        </button>
-    </section>
-
-</main>
-
-<script src="script.js"></script>
+        <footer>
+            <strong>Idea clave:</strong> si una capa falla, revisa de abajo hacia arriba: medio físico → enlace → red → transporte → aplicación.
+        </footer>
+    </main>
 </body>
 </html>
