@@ -3,147 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Membresía de Asociación</title>
+    <title>Modelo de referencia OSI | Infografía</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+    <main class="infografia">
+        <header class="hero">
+            <div class="eyebrow">REDES DE COMPUTADORAS · GUÍA VISUAL</div>
+            <h1>Modelo de referencia <span>OSI</span></h1>
+            <p class="intro">Un mapa de 7 capas para entender cómo viajan los datos desde una aplicación hasta el medio físico.</p>
+            <div class="flow-note">
+                <span>📤 Emisor</span><b>Encapsulación</b><span>→</span><b>Desencapsulación</b><span>📥 Receptor</span>
+            </div>
+        </header>
 
-<main class="container">
-
-    <section id="formularioSeccion">
-        <h2>Formulario de Membresía de Asociación</h2>
-
-        <div id="errorBox" class="error-box hidden" role="alert">
-            <strong>Por favor, corrige los siguientes campos:</strong>
-            <ul id="listaErrores"></ul>
-        </div>
-
-        <form id="formularioMembresia" novalidate>
-            <h3>Información de miembro</h3>
-
-            <span class="label-text">Nombre completo</span>
-            <div class="row">
-                <div class="col">
-                    <input
-                        type="text"
-                        id="nombre"
-                        name="nombre"
-                        placeholder="Primer nombre"
-                        autocomplete="given-name"
-                    >
-                </div>
-
-                <div class="col">
-                    <input
-                        type="text"
-                        id="apellido"
-                        name="apellido"
-                        placeholder="Apellido"
-                        autocomplete="family-name"
-                    >
-                </div>
+        <section class="layers" aria-labelledby="capas-titulo">
+            <div class="section-heading">
+                <h2 id="capas-titulo">Las 7 capas del modelo OSI</h2>
+                <p>De la experiencia del usuario a las señales que recorren la red</p>
             </div>
 
-            <span class="label-text">¿Cuál es tu dirección?</span>
+            <article class="layer layer-7">
+                <div class="number">7</div><div class="layer-name"><strong>Aplicación</strong><small>La interfaz con el usuario</small></div>
+                <div class="details"><b>¿Qué hace?</b> Ofrece servicios de red a las aplicaciones.</div>
+                <div class="examples"><b>Ejemplos</b><span>HTTP · DNS · SMTP · FTP</span></div>
+                <div class="pdu">Datos</div>
+            </article>
+            <article class="layer layer-6">
+                <div class="number">6</div><div class="layer-name"><strong>Presentación</strong><small>El traductor de la información</small></div>
+                <div class="details"><b>¿Qué hace?</b> Traduce formatos, cifra y comprime los datos.</div>
+                <div class="examples"><b>Ejemplos</b><span>JPEG · TLS/SSL · UTF-8</span></div>
+                <div class="pdu">Datos</div>
+            </article>
+            <article class="layer layer-5">
+                <div class="number">5</div><div class="layer-name"><strong>Sesión</strong><small>El coordinador del diálogo</small></div>
+                <div class="details"><b>¿Qué hace?</b> Abre, mantiene y cierra la comunicación.</div>
+                <div class="examples"><b>Ejemplos</b><span>RPC · NetBIOS · SIP</span></div>
+                <div class="pdu">Datos</div>
+            </article>
+            <article class="layer layer-4">
+                <div class="number">4</div><div class="layer-name"><strong>Transporte</strong><small>La entrega de extremo a extremo</small></div>
+                <div class="details"><b>¿Qué hace?</b> Segmenta, controla errores y regula el flujo.</div>
+                <div class="examples"><b>Ejemplos</b><span>TCP · UDP · puertos</span></div>
+                <div class="pdu">Segmentos</div>
+            </article>
+            <article class="layer layer-3">
+                <div class="number">3</div><div class="layer-name"><strong>Red</strong><small>Elige el mejor camino</small></div>
+                <div class="details"><b>¿Qué hace?</b> Direcciona y enruta paquetes entre redes.</div>
+                <div class="examples"><b>Ejemplos</b><span>IP · ICMP · routers</span></div>
+                <div class="pdu">Paquetes</div>
+            </article>
+            <article class="layer layer-2">
+                <div class="number">2</div><div class="layer-name"><strong>Enlace de datos</strong><small>La entrega dentro de la red local</small></div>
+                <div class="details"><b>¿Qué hace?</b> Forma tramas y usa direcciones físicas.</div>
+                <div class="examples"><b>Ejemplos</b><span>Ethernet · Wi-Fi · MAC</span></div>
+                <div class="pdu">Tramas</div>
+            </article>
+            <article class="layer layer-1">
+                <div class="number">1</div><div class="layer-name"><strong>Física</strong><small>Las señales y el medio</small></div>
+                <div class="details"><b>¿Qué hace?</b> Transmite bits como señales eléctricas, ópticas o de radio.</div>
+                <div class="examples"><b>Ejemplos</b><span>Cables · fibra · conectores</span></div>
+                <div class="pdu">Bits</div>
+            </article>
+        </section>
 
-            <div class="input-group">
-                <input
-                    type="text"
-                    id="direccion1"
-                    name="direccion1"
-                    placeholder="Dirección principal"
-                    autocomplete="address-line1"
-                >
-            </div>
-
-            <div class="input-group">
-                <input
-                    type="text"
-                    id="direccion2"
-                    name="direccion2"
-                    placeholder="Línea de dirección 2 (opcional)"
-                    autocomplete="address-line2"
-                >
-            </div>
-
-            <div class="row row-four-cols">
-                <div class="col col-city">
-                    <input
-                        type="text"
-                        id="ciudad"
-                        name="ciudad"
-                        placeholder="Ciudad"
-                        autocomplete="address-level2"
-                    >
-                </div>
-
-                <div class="col col-state">
-                    <input
-                        type="text"
-                        id="estado"
-                        name="estado"
-                        placeholder="Provincia o estado"
-                        autocomplete="address-level1"
-                    >
-                </div>
-
-                <div class="col col-zip">
-                    <input
-                        type="text"
-                        id="codigo_postal"
-                        name="codigo_postal"
-                        placeholder="Código postal"
-                        autocomplete="postal-code"
-                    >
-                </div>
-
-                <div class="col col-country">
-                    <select id="pais" name="pais" autocomplete="country-name">
-                        <option value="">Selecciona un país</option>
-                        <option value="Ecuador">Ecuador</option>
-                        <option value="Otro">Otro</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="input-group">
-                <span class="label-text">Número de teléfono</span>
-                <input
-                    type="tel"
-                    id="telefono"
-                    name="telefono"
-                    placeholder="Número de teléfono"
-                    maxlength="10"
-                    inputmode="numeric"
-                    autocomplete="tel"
-                >
-            </div>
-
-            <div class="input-group">
-                <span class="label-text">Dirección de correo electrónico</span>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Dirección de correo electrónico"
-                    autocomplete="email"
-                >
-            </div>
-
-            <button type="submit">Enviar registro</button>
-        </form>
-    </section>
-
-    <section id="exitoSeccion" class="success-box hidden" aria-live="polite">
-        <h1>¡Registro exitoso!</h1>
-        <p>Tus datos han sido validados correctamente.</p>
-        <button type="button" id="btnVolver" class="btn-volver">
-            Volver a registrar
-        </button>
-    </section>
-
-</main>
-
-<script src="script.js"></script>
+        <footer class="footer">
+            <div class="tip"><strong>💡 Para recordarlo:</strong> <span>“A Todos Se Les Trata De Forma Preferente”</span></div>
+            <div class="legend"><span class="dot app"></span> Capas superiores: software <span class="dot net"></span> Capas inferiores: transmisión</div>
+        </footer>
+    </main>
 </body>
 </html>
